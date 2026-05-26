@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share Space - Share your thoughts, ratings, and valuable feedback with us instantly and elegantly.">
+    <title>Share Space | Elegant Feedback</title>
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background glowing shapes for premium aesthetic -->
+    <div class="glow-bg">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+        <div class="feedback-card" id="feedbackCard">
+            <!-- Header Section -->
+            <header class="card-header">
+                <div class="logo-container">
+                    <span class="logo-icon">🌌</span>
+                </div>
+                <h1 class="logo-title">Share Space</h1>
+                <p class="logo-subtitle">Your thoughts shape our universe. Send us your experience.</p>
+            </header>
+
+            <!-- Form Section -->
+            <form id="feedbackForm" class="feedback-form" novalidate>
+                <!-- Name Field -->
+                <div class="input-group">
+                    <input type="text" id="name" name="name" required placeholder=" " autocomplete="name">
+                    <label for="name">Your Name</label>
+                    <span class="input-border"></span>
+                    <span class="error-msg" id="nameError">Please enter your name</span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder=" " autocomplete="email">
+                    <label for="email">Email Address</label>
+                    <span class="input-border"></span>
+                    <span class="error-msg" id="emailError">Please enter a valid email address</span>
+                </div>
+
+                <!-- Star Rating Field -->
+                <div class="rating-group">
+                    <span class="rating-label">How would you rate us?</span>
+                    <div class="star-rating" id="starRatingContainer" role="radiogroup" aria-label="Star Rating Selection">
+                        <button type="button" class="star-btn" data-value="1" aria-label="1 Star" role="radio" aria-checked="false">⭐</button>
+                        <button type="button" class="star-btn" data-value="2" aria-label="2 Stars" role="radio" aria-checked="false">⭐</button>
+                        <button type="button" class="star-btn" data-value="3" aria-label="3 Stars" role="radio" aria-checked="false">⭐</button>
+                        <button type="button" class="star-btn" data-value="4" aria-label="4 Stars" role="radio" aria-checked="false">⭐</button>
+                        <button type="button" class="star-btn" data-value="5" aria-label="5 Stars" role="radio" aria-checked="false">⭐</button>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="">
+                    <span class="error-msg" id="ratingError">Please select a star rating</span>
+                </div>
+
+                <!-- Comment Field -->
+                <div class="input-group comment-group">
+                    <textarea id="comment" name="comment" required placeholder=" " rows="4"></textarea>
+                    <label for="comment">Tell us more about your experience...</label>
+                    <span class="input-border"></span>
+                    <span class="error-msg" id="commentError">Please share your comments</span>
+                </div>
+
+                <!-- Form Action Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Transmit Feedback</span>
+                    <span class="btn-spinner hidden"></span>
+                </button>
+            </form>
+
+            <!-- Success Screen (Hidden by default) -->
+            <div id="successState" class="success-state hidden">
+                <div class="success-icon-wrapper">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 52 52">
+                            <circle class="success-circle" cx="26" cy="26" r="25" fill="none"/>
+                            <path class="success-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="success-title">Transmission Successful!</h2>
+                <p class="success-desc">Your thoughts have traveled safely across the digital cosmos to our team.</p>
+                <div id="demoNotice" class="demo-notice hidden">
+                    <p>💡 <strong>Demo Mode:</strong> The feedback was processed locally since Telegram configuration is not set up yet.</p>
+                </div>
+                <button type="button" class="reset-btn" id="resetBtn">Send Another Message</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Main JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
