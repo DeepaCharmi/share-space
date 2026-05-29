@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetBtn = document.getElementById('resetBtn');
 
     // API configuration
-    const API_URL = 'http://127.0.0.1:5001/submit';
+    const API_URL = 'https://share-space-masai-3.onrender.com/submit';
 
     /* ==========================================================================
        1. Interactive Star Rating System
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             // 6. Handle network or offline connection issues
             console.error('Fetch error:', error);
-            showToast('Unable to connect to Server. Ensure the Flask backend is active on http://127.0.0.1:5001');
+            showToast('Unable to connect to Server. Ensure the Flask backend is active on https://share-space-masai-3.onrender.com');
             setLoadingState(false);
         }
     });
